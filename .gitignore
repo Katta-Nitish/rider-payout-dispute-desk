@@ -1,6 +1,7 @@
 .env
 __pycache__/
 *.pyc
+!payswift/server.pyc
 *.pyo
 local.db
 evals/last-report.json
