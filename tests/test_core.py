@@ -1,6 +1,7 @@
 import os, tempfile, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-os.environ.setdefault('DATABASE_URL', 'sqlite:////tmp/procureyard_test.db')
+_tdb = os.path.join(tempfile.gettempdir(), 'procureyard_test.db').replace('\\', '/')
+os.environ.setdefault('DATABASE_URL', f'sqlite:///{_tdb}')
 os.environ.setdefault('PAYSWIFT_BASE_URL', 'http://127.0.0.1:9999')
 import app
 
